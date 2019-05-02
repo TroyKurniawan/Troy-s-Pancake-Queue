@@ -1,0 +1,187 @@
+/*
+
+== COLORS ==
+Dark Gray (Header):     #333
+Blue (Sidebar):         rgb(48, 68, 131);
+Dark Blue (Sidebar):    rgb(34, 48, 94);
+
+*/
+
+h1
+{
+    color: white;
+    font-size: 80px;
+    height: 100%;
+    margin: 0px;
+    padding: 30px
+}
+
+/* Body Section */
+body 
+{
+    background-color: #333;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-self: center;
+}
+
+/* Generic HTML */
+html
+{
+    height: 100%;
+    align-self: center;
+}
+
+img
+{
+    width: 5%;
+    height: 10%;
+}
+
+/* Table Header */
+th
+{
+    padding: 5px;
+    border-bottom: 1px solid #ffffff;
+    word-spacing: 23px;
+    font-size: 15px;
+}
+
+/* Table Cell Entries */
+td
+{
+    width: 600px;
+    font-size: 40px;
+
+    /* Smooth Color Transition */
+    transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    -webkit-transition: background 0.1s linear;
+
+    border: 1px solid rgb(61, 61, 61)
+}
+
+p
+{
+    /* font-family: Courier; */
+    padding: 0px;
+    margin: 3px;
+    justify-items: left
+}
+
+input
+{
+    font-size: 30px;
+    width: 50%;
+    height: 40px;
+    border: 1px solid rgb(73, 73, 73); /* Add a grey border */
+    background-color: rgb(209, 209, 209);
+    color: rgb(0, 0, 0);
+    align-self: center;
+}
+
+#input-and-buttons
+{
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    margin: 0px;
+    border: 10px white Solid;
+}
+
+#enterButton
+{
+    align-self: center;
+    width: 100px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: rgb(0, 99, 21);
+    border-radius: 6px;
+    right: 100px;
+    margin: 20px;
+
+    /* Smooth Color Transition */
+    transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    -webkit-transition: background 0.1s linear;
+}
+
+#enterButton:hover
+{
+    background-color: rgb(0, 128, 28);
+}
+
+#enterButton:active
+{
+    background-color: rgb(0, 156, 34);
+}
+
+/* ==== QUEUE ================================================= */
+
+/* Container that holds the table */
+#queueContainer
+{
+    background-color: rgb(68, 68, 68);
+    padding: 20px;
+    background-color: rgb(87, 87, 87);
+    height: 570px;
+    /* margin: 10px; */
+    overflow: auto;
+    /* border: 1px solid white; */
+    /* border-bottom: 1px solid #ffffff; */
+    /* border-top: 1px solid #ffffff; */
+}
+
+/* Table Itself */
+#queueTable
+{
+    margin: auto;
+    height: 100%;
+    overflow: auto;
+    font-size: 12px;
+    /* border: 1px solid white; */
+}
+
+/* Table Rows */
+#queueTable tr
+{
+    /* Smooth Color Transition */
+    transition: background-color 0.1s linear;
+    -moz-transition: background-color 0.1s linear;
+    -webkit-transition: background-color 0.1s linear;
+}
+
+/* Highlights member row when mouse is hovering over it */
+#queueTable tr:hover
+{
+    /* Add a grey background color to the table header and on hover */
+    background-color: rgb(104, 104, 104);
+}
+
+/* ==== SCROLLBAR =================================================== */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(134, 134, 134);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 107, 107);
+}

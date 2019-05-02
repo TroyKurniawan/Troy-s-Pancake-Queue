@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- DEFAULT HEAD STATEMENTS -->
+        <title>Troy's Pancake Queue</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <!-- DEFAULT CSS -->
+        <link rel="stylesheet" href="main.css">
+        
+        <!-- BROWSER TAB ICON (FAVICON) -->
+        <link rel="icon" href="pancake.png">
+    </head>
+     
+    <header>
+        <h1 align="center">TROY'S PANCAKE QUEUE
+            <img src="pancake.png">
+        </h1>
+    </header>
+
+    <body>
+
+        <!-- INPUTS -->
+        <div align="center" class="input-and-buttons">
+            <input type="text" id="nameInput" placeholder="Enter your name..." class="input" align="center">
+            <input type="text" id="commentInput" placeholder="Enter any comments about your order..." class="input" align="center">
+            <!-- ENTER BUTTON -->
+            <div id='enterButton' onclick="enterButton()" class="button">
+                ENTER
+            </div>
+        </div>
+
+            
+        <!-- QUEUE -->
+        <div id='queueContainer' align="center">
+            <!-- Table itself -->
+            <table id='queueTable' align="center">
+                <thead align="center">
+                    <tr align="center"></tr>
+                </thead>
+            </table>
+        </div>
+
+        <!-- ------------------------------------------------- -->
+
+        <!-- JS Files -->
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
