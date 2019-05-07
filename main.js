@@ -1,3 +1,5 @@
+// GLOBALS ========================================================
+
 // Get input text element
 let name = document.getElementById("nameInput");
 let comment = document.getElementById("commentInput");
@@ -6,8 +8,13 @@ let comment = document.getElementById("commentInput");
 let counter = 1;
 let numberOfRows = 1;
 
+// FUNCTIONS ======================================================
+
+// Enter Button
 function enterButton()
 {
+    console.log("Enter Button Pressed");
+
     // Get time
     var time = new Date();
     // If the minute is less than 10, add a 0 to the time (eg. 5 minutes = 05)
@@ -21,13 +28,12 @@ function enterButton()
         var time = time.getHours() + ":" + time.getMinutes();
     }
 
-    console.log("CLICK");
+    // Get the input values
     personName = document.getElementById("nameInput");        // Get nameInput element
     personName = personName.value;                                  // Get actual name
-    console.log(personName);
     comment = document.getElementById("commentInput");  // Get commentInput element
     comment = comment.value;                            // Get actual name
-    console.log(comment === "");
+    console.log(personName + ", " + comment);
 
     // Get table element
     let table = document.getElementById("queueTable"); 
@@ -35,6 +41,7 @@ function enterButton()
     // Check if at least a name has been added
     let valid = (personName !== "" ? true : false);
 
+    // As long as we have at least a name
     if(valid)
     {
         // Create an empty <tr> element and add it to the 1st position of the table:
@@ -54,10 +61,12 @@ function enterButton()
         cell4.innerHTML = time;
         cell5.innerHTML = "";
 
-        let removeCounter = counter;
+        // Counter used for removing members
+        let currentCount = counter;
     
+        // EventListeners
         row.addEventListener('click', () => clickRow(cell5));
-        row.addEventListener('dblclick', () => removeRow(cell2.innerHTML));
+        row.addEventListener('dblclick', () => removeRow(cell2.innerHTML, currentCount));
     
         // Increment counter
         counter++;
@@ -68,30 +77,10 @@ function enterButton()
         alert("go to hell");
     }
 
+    // Erase input field after pressing enter
     personName = document.getElementById("nameInput").value = "";
     comment = document.getElementById("commentInput").value = "";
-
 }
-
-name.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      enterButton();
-    }
-});
-
-comment.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      enterButton();
-    }
-});
 
 // Click function to add "DONE" to the row
 function clickRow(cell5)
@@ -114,18 +103,46 @@ function toggleSidebar()
     document.getElementById("infoSidebar").classList.toggle('active');
 }
 
-function removeRow(personName)
+// Remove a row from the table
+function removeRow(personName, number)
 {
-    console.log("Searching for: " + personName);
+    console.log("Searching for: " + personName + ", " + number);
+
+    // Get table element
     let table = document.getElementById("queueTable"); 
     
+    // Iterate through the entire table
     for(var i=1; i<numberOfRows; i++)
     {
-        if(table.rows[i].cells[1].innerHTML == personName)
+        // If the name and counter matches, remove
+        if((table.rows[i].cells[1].innerHTML == personName) && (table.rows[i].cells[0].innerHTML == number))
         {
             table.deleteRow(i);
             console.log("REMOVED");
+            break;
         }
     }
     numberOfRows--;
 }
+
+// EVENT LISTENERS ================================================
+
+name.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      enterButton();
+    }
+});
+
+comment.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      enterButton();
+    }
+});

@@ -3,9 +3,6 @@
 == COLORS ==
 Dark Gray (Header):     #333
 Gray:                   rgb(87, 87, 87);
-Light Gray:             
-Blue (Sidebar):         rgb(48, 68, 131);
-Dark Blue (Sidebar):    rgb(34, 48, 94);
 
 */
 
@@ -13,7 +10,7 @@ h1
 {
     color: white;
     font-size: 50px;
-    margin: 10px;
+    margin: 0px;
 }
 
 /* Body Section */
@@ -66,6 +63,8 @@ input
     margin: 4px;
 }
 
+/* ==== EXTRA ================================================= */
+
 #pancake
 {
     width: 2.5%;
@@ -83,6 +82,14 @@ input
     transform: rotate(180deg);
 }
 
+#underline
+{
+    border-bottom: 1px solid black;
+}
+
+/* ==== SIDEBAR =============================================== */
+
+/* Sidebar itself */
 #infoSidebar
 {
     /* border-right: 2px solid #333; */
@@ -101,7 +108,7 @@ input
     color: black;
 }
 
-/* Sidebar (when clicked) properties */
+/* Sidebar (when clicked) */
 #infoSidebar.active
 {
     /* Moves the sidebar back into place when button is first clicked */
@@ -109,6 +116,7 @@ input
     box-shadow: 5px 5px 30px #333;
 }
 
+/* Sidebar Button */
 #infoSidebar .infoButton
 {
     top: 30px;
@@ -126,15 +134,13 @@ input
     -webkit-transition: background 0.1s linear;
 }
 
+/* Sidebar Button (hover) */
 #infoSidebar .infoButton:hover
 {
     background-color: rgb(170, 170, 170);
 }
 
-#underline
-{
-    border-bottom: 1px solid black;
-}
+/* ==== INPUTS/BUTTONS ======================================== */
 
 #input-and-buttons
 {
@@ -180,7 +186,7 @@ input
     border-radius: 20px;
     padding: 20px;
     background-color: rgb(87, 87, 87);
-    height: 620px;
+    height: 650px;
     margin: 10px;
     overflow: auto;
     /* border: 1px solid white; */
