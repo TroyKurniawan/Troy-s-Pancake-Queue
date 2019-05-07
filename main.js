@@ -4,6 +4,7 @@ let comment = document.getElementById("commentInput");
 
 // Counter for table
 let counter = 1;
+let numberOfRows = 1;
 
 function enterButton()
 {
@@ -30,7 +31,8 @@ function enterButton()
 
     // Get table element
     let table = document.getElementById("queueTable"); 
-    
+
+    // Check if at least a name has been added
     let valid = (personName !== "" ? true : false);
 
     if(valid)
@@ -51,11 +53,15 @@ function enterButton()
         cell3.innerHTML = comment;
         cell4.innerHTML = time;
         cell5.innerHTML = "";
+
+        let removeCounter = counter;
     
         row.addEventListener('click', () => clickRow(cell5));
+        row.addEventListener('dblclick', () => removeRow(cell2.innerHTML));
     
         // Increment counter
         counter++;
+        numberOfRows++;
     }
     else
     {
@@ -87,16 +93,39 @@ comment.addEventListener("keyup", function(event) {
     }
 });
 
+// Click function to add "DONE" to the row
 function clickRow(cell5)
 {
     console.log("CHECK");
-    if(cell5.innerHTML != "X")
+    if(cell5.innerHTML != "DONE")
     {
-        cell5.innerHTML = "X";
+        cell5.innerHTML = "DONE";
         cell5.style.color = "limegreen";
     }
     else
     {
         cell5.innerHTML = "";
     }
+}
+
+// Enables the sidebar button functionality
+function toggleSidebar()
+{
+    document.getElementById("infoSidebar").classList.toggle('active');
+}
+
+function removeRow(personName)
+{
+    console.log("Searching for: " + personName);
+    let table = document.getElementById("queueTable"); 
+    
+    for(var i=1; i<numberOfRows; i++)
+    {
+        if(table.rows[i].cells[1].innerHTML == personName)
+        {
+            table.deleteRow(i);
+            console.log("REMOVED");
+        }
+    }
+    numberOfRows--;
 }

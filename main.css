@@ -2,6 +2,8 @@
 
 == COLORS ==
 Dark Gray (Header):     #333
+Gray:                   rgb(87, 87, 87);
+Light Gray:             
 Blue (Sidebar):         rgb(48, 68, 131);
 Dark Blue (Sidebar):    rgb(34, 48, 94);
 
@@ -10,18 +12,15 @@ Dark Blue (Sidebar):    rgb(34, 48, 94);
 h1
 {
     color: white;
-    font-size: 80px;
-    height: 100%;
-    margin: 0px;
-    padding: 30px
+    font-size: 50px;
+    margin: 10px;
 }
 
 /* Body Section */
 body 
 {
     background-color: #333;
-    font-family: 'Montserrat';
-    font-size: 10px;
+    font-family: 'Helvetica';
     color: rgb(255, 255, 255);
     height: 100%;
     margin: 0px;
@@ -36,52 +35,105 @@ html
     align-self: center;
 }
 
-img
+p
 {
-    width: 5%;
-    height: 10%;
-}
-
-/* Table Header */
-th
-{
-    padding: 5px;
-    border-bottom: 1px solid #ffffff;
-    word-spacing: 23px;
-    font-size: 15px;
+    margin: 15px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /* Table Cell Entries */
 td
 {
     width: 600px;
-    font-size: 40px;
+    font-size: 30px;
 
     /* Smooth Color Transition */
     transition: background 0.1s linear;
     -moz-transition: background 0.1s linear;
     -webkit-transition: background 0.1s linear;
-
-    border: 1px solid rgb(61, 61, 61)
-}
-
-p
-{
-    /* font-family: Courier; */
-    padding: 0px;
-    margin: 3px;
-    justify-items: left
 }
 
 input
 {
-    font-size: 30px;
+    font-size: 20px;
     width: 50%;
-    height: 40px;
+    height: 30px;
     border: 1px solid rgb(73, 73, 73); /* Add a grey border */
     background-color: rgb(209, 209, 209);
     color: rgb(0, 0, 0);
     align-self: center;
+    margin: 4px;
+}
+
+#pancake
+{
+    width: 2.5%;
+    height: 5%;
+}
+
+#hand
+{
+    width: 100%;
+    height: 30%;
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#infoSidebar
+{
+    /* border-right: 2px solid #333; */
+    position: fixed;
+    top: 20px;
+    width: 300px;
+    height: 75%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 2;
+    left: -302px;                                                   /* Hides the sidebar */
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);       /* Transition settings */
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(172, 172, 172);
+    color: black;
+}
+
+/* Sidebar (when clicked) properties */
+#infoSidebar.active
+{
+    /* Moves the sidebar back into place when button is first clicked */
+    left: 0px;
+    box-shadow: 5px 5px 30px #333;
+}
+
+#infoSidebar .infoButton
+{
+    top: 30px;
+    left: 301px;
+    position: absolute;
+    color: black;
+    background-color: rgb(131, 131, 131);
+    padding: 10px;
+    height: 30px;
+    font-size: 22px;
+
+    /* Smooth Color Transition */
+    transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    -webkit-transition: background 0.1s linear;
+}
+
+#infoSidebar .infoButton:hover
+{
+    background-color: rgb(170, 170, 170);
+}
+
+#underline
+{
+    border-bottom: 1px solid black;
 }
 
 #input-and-buttons
@@ -96,13 +148,13 @@ input
 #enterButton
 {
     align-self: center;
-    width: 100px;
+    width: 90px;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
     background-color: rgb(0, 99, 21);
     border-radius: 6px;
-    right: 100px;
-    margin: 20px;
+    right: 220px;
+    margin: 10px;
 
     /* Smooth Color Transition */
     transition: background 0.1s linear;
@@ -125,11 +177,11 @@ input
 /* Container that holds the table */
 #queueContainer
 {
-    background-color: rgb(68, 68, 68);
+    border-radius: 20px;
     padding: 20px;
     background-color: rgb(87, 87, 87);
-    height: 570px;
-    /* margin: 10px; */
+    height: 620px;
+    margin: 10px;
     overflow: auto;
     /* border: 1px solid white; */
     /* border-bottom: 1px solid #ffffff; */
@@ -160,6 +212,12 @@ input
 {
     /* Add a grey background color to the table header and on hover */
     background-color: rgb(104, 104, 104);
+}
+
+#copyright
+{
+    margin: 5px;
+    font-size: 12px;
 }
 
 /* ==== SCROLLBAR =================================================== */

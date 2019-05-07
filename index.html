@@ -16,11 +16,25 @@
      
     <header>
         <h1 align="center">TROY'S PANCAKE QUEUE
-            <img src="pancake.png">
+            <img id="pancake" src="pancake.png">
         </h1>
     </header>
 
     <body>
+        <!-- INFO -->
+        <div id="infoSidebar">
+            <!-- BUTTON -->
+            <div class="infoButton" onclick="toggleSidebar()">
+                >
+            </div>
+            
+            <h2 align="center">GOTTEM!</h2>
+
+            <div id="underline"></div>
+
+            <img id="hand" src="ok-hand.jpg">
+
+        </div>
 
         <!-- INPUTS -->
         <div align="center" class="input-and-buttons">
@@ -31,19 +45,29 @@
                 ENTER
             </div>
         </div>
-
             
         <!-- QUEUE -->
         <div id='queueContainer' align="center">
             <!-- Table itself -->
             <table id='queueTable' align="center">
                 <thead align="center">
-                    <tr align="center"></tr>
+                    <tr align="center" style="background-color: #333;">
+                        <td>CUSTOMER #</td>
+                        <td>NAME</td>
+                        <td>COMMENTS</td>
+                        <td>TIME OF REQUEST</td>
+                        <td>DONE?</td>
+                    </tr>
                 </thead>
             </table>
         </div>
 
-        <!-- ------------------------------------------------- -->
+        <!-- COPYRIGHT -->
+        <div id="copyright" align="center">Troy Kurniawan ©2019 All Rights Reserved</div>
+        <div id="copyright" align="center">
+            Follow my SoundCloud:
+            <a href="https://soundcloud.com/similar-outskirts" target="_blank" style="color:lightblue">https://soundcloud.com/similar-outskirts</a>
+        </div>
 
         <!-- JS Files -->
         <script type="text/javascript" src="main.js"></script>
