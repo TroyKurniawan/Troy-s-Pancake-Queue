@@ -74,7 +74,7 @@ function enterButton()
     }
     else
     {
-        alert("go to hell");
+        alert("go to hell \n- Evan");
     }
 
     // Erase input field after pressing enter
